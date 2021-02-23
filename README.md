@@ -40,23 +40,39 @@ Payload: {
 }
 ```
 
+2. User can login.
+- [https://finito-cloud.herokuapp.com/api/login](https://finito-cloud.herokuapp.com/api/login)
+```
+Payload: {
+    "email" : "",
+    "password" : ""
+}
+```
 
-2. Users can fund their wallets using their atm cards.
+3. Users can fund their wallets using their atm cards.
 - [https://finito-cloud.herokuapp.com/api/wallet/credit](https://finito-cloud.herokuapp.com/api/wallet/credit)
 
 
 ```
+Header: {
+    "Authorization" : "Bearer $token"
+}
+
 Payload: {
     "amount" : "",
     "description" : ""
 }
 ```
 
-3. Users can fund other users wallets using a unique identifier that each user has.
+4. Users can fund other users wallets using a unique identifier that each user has.
 - [https://finito-cloud.herokuapp.com/api/wallet/transfer](https://finito-cloud.herokuapp.com/api/wallet/transfer)
 
 
 ```
+Header: {
+    "Authorization" : "Bearer $token"
+}
+
 Payload: {
     "to_user_id" : "",
     "amount" : "",

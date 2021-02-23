@@ -21,13 +21,6 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/pay', [App\Http\Controllers\PaymentController::class, 'redirectToGateway'])->name('pay');
-Route::post('/send', [App\Http\Controllers\PaymentController::class, 'send'])->name('send');
-Route::post('/send/submit', [App\Http\Controllers\PaymentController::class, 'send_submit'])->name('send.submit');
+Route::post('/send', [App\Http\Controllers\PaymentController::class, 'send'])->middleware('verified')->name('send');
+Route::post('/send/submit', [App\Http\Controllers\PaymentController::class, 'send_submit'])->middleware('verified')->name('send.submit');
 Route::get('/payment/callback', [App\Http\Controllers\PaymentController::class, 'handleGatewayCallback'])->name('pay.continue');
-
-
-// Route::post('/pay', [
-//     'uses' => 'PaymentController@redirectToGateway',
-//     'as' => 'pay'
-// ]);
-// Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');

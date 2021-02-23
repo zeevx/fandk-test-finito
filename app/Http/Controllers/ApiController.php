@@ -42,6 +42,8 @@ class ApiController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
+        $accessToken = $user->createToken('authToken')->accessToken;
+
         //Send Email to User
         event(new Registered($user));
 
@@ -49,8 +51,29 @@ class ApiController extends Controller
         return response()->json([
             'success' => true,
             'message' => 'User Created Successfully.',
-            'data' => $user
+            'data' => $user,
+            'token' => $accessToken
         ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        $loginData = $request->validate([
+            'email' => 'email|required',
+            'password' => 'required'
+        ]);
+
+        if (!auth()->attempt($loginData)) {
+            return response(['message' => 'Invalid Credentials']);
+        }
+
+        $accessToken = auth()->user()->createToken('authToken')->accessToken;
+
+        return response(['user' => auth()->user(), 'token' => $accessToken]);
     }
 
     public function credit(Request $request)
