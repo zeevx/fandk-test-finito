@@ -14,6 +14,7 @@ Banking system like no other, make secure transactions online or offline using o
 - Run composer install
 - Run php artisan key:generate
 - Run php artisan migrate to run migrations
+- Run  php artisan passport:install
 - App is ready to be served
 
 ## Live Demo
