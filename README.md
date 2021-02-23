@@ -7,6 +7,15 @@ A test project for F&K interview, i call it Finito!
 
 Banking system like no other, make secure transactions online or offline using our app or transfer device.
 
+## How to set up locally
+- Copy the content in .env.example to a new file called .env
+- Configure your .env correctly
+- Configure your .env with your paystack test/live keys
+- Run composer install
+- Run php artisan key:generate
+- Run php artisan migrate to run migrations
+- App is ready to be served
+
 ## Live Demo
 
 - [https://finito-cloud.herokuapp.com/](https://finito-cloud.herokuapp.com).

@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 //Register User
 Route::post('/register', [App\Http\Controllers\ApiController::class, 'register']);
 
-Route::post('/send', [App\Http\Controllers\ApiController::class, 'send']);
-Route::get('/fetch/{id}', [App\Http\Controllers\ApiController::class, 'fetch']);
-
 //Credit User Wallet After Successful Payment
 Route::post('/wallet/credit',[App\Http\Controllers\ApiController::class, 'credit'])->middleware('auth:api');
 
