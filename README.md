@@ -9,7 +9,7 @@ Banking system like no other, make secure transactions online or offline using o
 
 ## How to set up locally
 - Copy the content in .env.example to a new file called .env
-- Configure your .env correctly
+- Configure your .env correctly (Including your SMTP configuration for email)
 - Configure your .env with your paystack test/live keys
 - Run composer install
 - Run php artisan key:generate
