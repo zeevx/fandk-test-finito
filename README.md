@@ -1,5 +1,7 @@
 
-# Finito
+# Finito - F&K
+
+A test project for F&K interview, i call it Finito!
 
 ## About Laravel-Finito Cloud System
 
@@ -8,6 +10,12 @@ Banking system like no other, make secure transactions online or offline using o
 ## Live Demo
 
 - [https://finito-cloud.herokuapp.com/](https://finito-cloud.herokuapp.com).
+
+You can register an account, you will get a account number immediately, you can top up your wallet
+using the integrated paystack payment gateway and then you can transfer to another user using their
+own account number.
+    
+    Enjoying testing! ^_^ 
 
 ## API EndPoints
 
